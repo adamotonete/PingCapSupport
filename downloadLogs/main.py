@@ -40,7 +40,7 @@ for x in range(0, args.threads):
         urldown.append(list_lines[start:lines_per_thread])
     start = start + lines_per_thread + 1
 
-for i in range(10):
+for i in range(args.threads):
     t = threading.Thread(target=run_download, args=(None, urldown[i],))
     threads.append(t)
     t.start()
